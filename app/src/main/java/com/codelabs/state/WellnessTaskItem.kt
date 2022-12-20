@@ -15,27 +15,28 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role.Companion.Checkbox
 import androidx.compose.ui.unit.dp
 
-@Composable
-fun WellnessTaskItem(taskName: String, onClose: () -> Unit, modifier: Modifier = Modifier) {
-    var checkedState by rememberSaveable { mutableStateOf(false) }
-
-    WellnessTaskItem(
-        taskName = taskName,
-        checked = checkedState,
-        onCheckedChange = { newValue -> checkedState = newValue },
-        onClose = onClose, // we will implement this later!
-        modifier = modifier,
-    )
-}
+//@Composable
+//fun WellnessTaskItem(taskName: String, onClose: () -> Unit, modifier: Modifier = Modifier) {
+//    var checkedState by rememberSaveable { mutableStateOf(false) }
+//
+//    WellnessTaskItem(
+//        taskName = taskName,
+//        checked = checkedState,
+//        onCheckedChange = { newValue -> checkedState = newValue },
+//        onClose = onClose, // we will implement this later!
+//        modifier = modifier,
+//    )
+//}
 
 
 @Composable
 fun WellnessTaskItem(
     taskName: String,
-    onClose: () -> Unit,
-    modifier: Modifier = Modifier,
     checked: Boolean,
-    onCheckedChange: (Boolean) -> Unit
+    onCheckedChange: (Boolean) -> Unit,
+    onClose: () -> Unit,
+    modifier: Modifier = Modifier
+
 ) {
     Row(
         modifier = modifier, verticalAlignment = Alignment.CenterVertically
